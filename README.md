@@ -1,4 +1,4 @@
-# ED colonisation utility  
+# Elite Dangerous Colonisation Utility  
 Basically a calculator.  
 
 usage: just run cargocount.py  
