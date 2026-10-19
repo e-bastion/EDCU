@@ -1,8 +1,10 @@
 # ED colonisation utility  
 Basically a calculator.  
 
-Usage: just run cargocount.py  
-Doesnt save anything, so you will have to do it in one run.  
-Doesnt do anything automatically.  
-Doesnt use internet.  
+usage: just run cargocount.py  
+doesnt save anything, so you will have to do it in one run  
+doesnt do anything automatically  
+doesnt use internet  
 works for me, idk
+
+all numbers are taken from https://cargo-splitter.replit.app/ and left unchecked  
