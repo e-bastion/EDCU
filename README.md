@@ -1,5 +1,4 @@
-# ED colonisation utility
-Micro program running in a python interpreter window to help with Elite Dangerous colonisation fleet carrier loading.  
+# ED colonisation utility  
 Basically a calculator.  
 
 Usage: just run cargocount.py  
