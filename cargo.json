@@ -1,5 +1,5 @@
 {
-    "Outpost": {
+    "Outpost Primary": {
         "Liquid Oxygen": 1792,
         "Water": 741,
         "Food Cartridges": 94,
@@ -20,7 +20,7 @@
         "Medical Diagnostic Equipment": 13,
         "Non-Lethal Weapons": 13
     },
-    "Coriolis": {
+    "Coriolis Primary": {
         "Liquid Oxygen": 4976,
         "Water": 2209,
         "Food Cartridges": 242,
@@ -41,7 +41,7 @@
         "Medical Diagnostic Equipment": 25,
         "Non-Lethal Weapons": 25
     },
-    "Asteroid Base": {
+    "Asteroid Base Primary": {
         "Liquid Oxygen": 4976,
         "Water": 2209,
         "Food Cartridges": 242,
@@ -62,7 +62,7 @@
         "Medical Diagnostic Equipment": 25,
         "Non-Lethal Weapons": 25
     },
-    "T3 Port": {
+    "T3 Port Primary": {
         "Liquid Oxygen": 17514,
         "Water": 7636,
         "Food Cartridges": 484,
@@ -83,7 +83,7 @@
         "Medical Diagnostic Equipment": 50,
         "Non-Lethal Weapons": 50
     },
-    "Dodec": {
+    "Dodec Primary": {
         "Liquid Oxygen": 19405,
         "Water": 8441,
         "Food Cartridges": 605,
