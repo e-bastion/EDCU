@@ -73,7 +73,7 @@ with open("cargo.json", "r") as file:
 				capacity -= deductor[query]
 				if deductor[query] == 0:
 					listing()
-					print("already at zero you drunk fuck")
+					print(f"{comparitor[query]} is already filled, try again")
 				else:
 					deductor[query] = 0
 					listing()
