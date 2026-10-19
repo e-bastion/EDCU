@@ -5,5 +5,5 @@ Basically a calculator.
 Usage: just run cargocount.py  
 Doesnt save anything, so you will have to do it in one run.  
 Doesnt do anything automatically.  
-Doesnt any internet.  
+Doesnt use internet.  
 works for me, idk
