@@ -1,5 +1,6 @@
 # Elite Dangerous Colonisation Utility  
-Basically a calculator.  
+Kind of a calculator.  
+Subtracts a number from a list of numbers, nothing more, nothing less.  
 
 usage: just run cargocount.py  
 doesnt save anything, so you will have to do it in one run  
