@@ -11,4 +11,5 @@ doesnt use internet
 works for me, idk  
 might add saving and automatic journal querying later, idk  
 
-all numbers are taken from https://cargo-splitter.replit.app/ and left unchecked  
+all numbers are taken from https://cargo-splitter.replit.app/  
+...after some checking it turns out some materials are missing, sorry about that
