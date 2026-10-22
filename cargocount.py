@@ -52,6 +52,8 @@ with open("cargo.json", "r") as file:
 
 	for k1 in data[goal]:
 		newkey = k1[0:3].lower()
+		while newkey in comparitor:
+			newkey += "+"
 		comparitor[newkey] = k1
 		deductor[newkey] = data[goal][k1]
 	listing()
