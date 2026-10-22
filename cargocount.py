@@ -2,9 +2,9 @@ import json, os
 
 
 def listing():
-	for k, v in comparitor.items():
-		if deductor[k] != 0:
-			print(f"({k}) {v}: {deductor[k]}")
+	for k, v in deductor.items():
+		if v != 0:
+			print(f"({k}) {comparitor[k]}: {v}")
 	print("")
 
 
@@ -32,59 +32,78 @@ with open("cargo.json", "r") as file:
 		comparitor0[newkey0] = k
 		total_weight = sum(data[k].values())
 		print(f"({newkey0}) {k}: {total_weight}")
+
 	while 1:
-		goal = input("\nproject: ")
-		#
-		if goal in comparitor0:
-			goal = comparitor0[goal]
-			break
-		else:
-			print("no such project")
+		goal = input("\nprojects separated by space: ")
+		goal_list = goal.split()
+		goal_total = {}
+		for project in goal_list:
+			if project in comparitor0:
+				goal_total[project] = comparitor0[project]
+				print(f"added {project}")
+			else:
+				print(f"no project named {project}")
+		break
 
 	os.system("cls")
 	comparitor = {}
 	deductor = {}
+	# i hate this part so much
+	inverted_comparitor = {}
 
-	for k1 in data[goal]:
-		newkey = k1[0:3].lower()
-		while newkey in comparitor:
-			newkey += "+"
-		comparitor[newkey] = k1
-		deductor[newkey] = data[goal][k1]
-	listing()
-	print(f"selected goal - {goal}")
-	while 1:
-		if capacity_flag == 1:
-			capacity = capacity_input
-		query = input(f"delivering {capacity}: ")
-		if query == "exit":
-			break
-		os.system("cls")
-		if query in deductor:
-			if deductor[query] >= capacity:
-				deductor[query] -= capacity
-				listing()
-				print(f"delivered {capacity} {comparitor[query]}, {deductor[query]} remaining")
-				capacity_flag = 1
+	for project1 in goal_total.values():
+		print(project1)
+		for k1 in data[project1]:
+			if k1 in inverted_comparitor:
+				print(f"{k1} exists, added value")
+				deductor[inverted_comparitor[k1]] += data[project1][k1]
 			else:
-				capacity -= deductor[query]
-				if deductor[query] == 0:
-					listing()
-					print(f"{comparitor[query]} is already filled, try again")
-				else:
-					deductor[query] = 0
-					listing()
-					print(f"filled {comparitor[query]}, enter next commodity or (r) to reset capacity")
-				capacity_flag = 0
-		else:
+				newkey = k1[0:3].lower()
+				if newkey in comparitor.keys():
+					while newkey in comparitor:
+						newkey += "+"
+
+				comparitor[newkey] = k1
+				inverted_comparitor[k1] = newkey
+				deductor[newkey] = data[project1][k1]
+				print(f"{k1} doesnt exist, new key: {newkey} as {comparitor[newkey]}")
+		print("")
+
+listing()
+prettyprint = ", ".join(goal_total.values())
+print(f"selected goals - {prettyprint}")
+while 1:
+	if capacity_flag == 1:
+		capacity = capacity_input
+	query = input(f"delivering {capacity}: ")
+	if query == "exit":
+		break
+	os.system("cls")
+	if query in deductor:
+		if deductor[query] >= capacity:
+			deductor[query] -= capacity
 			listing()
-			if query == "r":
-				print("capacity has been reset")
-				capacity_flag = 1
+			print(f"delivered {capacity} {comparitor[query]}, {deductor[query]} remaining")
+			capacity_flag = 1
+		else:
+			capacity -= deductor[query]
+			if deductor[query] == 0:
+				listing()
+				print(f"{comparitor[query]} is already filled, try again")
 			else:
-				print("wrong query, try again or (r) to reset capacity")
-		if all(value == 0 for value in deductor.values()):
-			os.system("cls")
-			print(f"congratulations on finishing the {goal}!\npress any key to exit")
-			input()
-			break
+				deductor[query] = 0
+				listing()
+				print(f"filled {comparitor[query]}, enter next commodity or (r) to reset capacity")
+			capacity_flag = 0
+	else:
+		listing()
+		if query == "r":
+			print("capacity has been reset")
+			capacity_flag = 1
+		else:
+			print("wrong query, try again or (r) to reset capacity")
+	if all(value == 0 for value in deductor.values()):
+		os.system("cls")
+		print(f"congratulations on finishing the {goal}!\npress any key to exit")
+		input()
+		break
