@@ -2,14 +2,9 @@ import json, os
 
 
 def listing():
-	comparitor1 = []
 	for k, v in comparitor.items():
 		if deductor[k] != 0:
-			newkey1 = k[0:3].lower()
-			while newkey1 in comparitor1:
-				newkey1 += "+"
-			comparitor1.append(newkey1)
-			print(f"({newkey1}) {v}: {deductor[k]}")
+			print(f"({k}) {v}: {deductor[k]}")
 	print("")
 
 
