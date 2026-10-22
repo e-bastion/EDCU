@@ -2,6 +2,9 @@
 Kind of a calculator.  
 Subtracts a number from a list of numbers, nothing more, nothing less.  
 
+now can add multiple projects at once!  
+fixed bug with similar names  
+
 usage: just run cargocount.py  
 type in your ships cargo capacity, then type options shown in parentheses  
 typing exit will exit, duh  
